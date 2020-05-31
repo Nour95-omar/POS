@@ -15,12 +15,12 @@ public class Main {
      * the main method used to start the applications
      * @param args the application does not have any parameters.
      */
-   public static void main(String[]args) throws InvalidItemIdentifierException,OperationFailedException {
-
-    Controller contr = new Controller();
-    View view = new View(contr);
-    view.runFakeExecution();
-    System.out.println("Unable to start the application");
+   public static void main(String[]args) 
+    {
+        Controller contr = new Controller();
+        View view = new View(contr);
+        view.runFakeExecution();
+        System.out.println("Unable to start the application");
    }
 
 

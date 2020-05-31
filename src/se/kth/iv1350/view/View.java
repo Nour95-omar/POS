@@ -47,7 +47,8 @@ public class View {
      * @throws InvalidItemIdentifierException if the searched item does not exist in the store.
      * @throws OperationFailedException       if an operation fails for unknown reason
      */
-    public void runFakeExecution() throws OperationFailedException, InvalidItemIdentifierException, DatabaseFailureException {
+    public void runFakeExecution() //throws OperationFailedException, InvalidItemIdentifierException, DatabaseFailureException
+    {
         startTheSale();
         int newItem = 0;
         try {
@@ -57,11 +58,11 @@ public class View {
 
         } catch (InvalidItemIdentifierException exc) {
             handleException("This product: " + newItem + " does not exist in the store", exc);
-            return; //TODO is that what is the teacher want?
+
         }
         catch (DatabaseFailureException databaseFailureException) {
             handleException("Something went wrong, please contact the supervisor ", databaseFailureException);
-            return;
+
         }
         System.out.println("The customer pay for the current sale");
         double paid = 400;
