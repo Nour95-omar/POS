@@ -49,19 +49,19 @@ public class View {
      */
     public void runFakeExecution() throws OperationFailedException, InvalidItemIdentifierException, DatabaseFailureException {
         startTheSale();
-        int newItem = 7604676;
+        int newItem = 0;
         try {
             System.out.println("The cashier enters new items.\n");
-            contr.enterNewItem(123456, 1);
-            contr.enterNewItem(7604676, 1);
-
+            contr.enterNewItem(123456, 1); //This is correct
+            contr.enterNewItem(7604676, 1); //This will throw an exception
 
         } catch (InvalidItemIdentifierException exc) {
             handleException("This product: " + newItem + " does not exist in the store", exc);
+            return; //TODO is that what is the teacher want?
         }
-        //TODO test the exceptions here
         catch (DatabaseFailureException databaseFailureException) {
             handleException("Something went wrong, please contact the supervisor ", databaseFailureException);
+            return;
         }
         System.out.println("The customer pay for the current sale");
         double paid = 400;

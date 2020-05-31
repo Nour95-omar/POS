@@ -11,11 +11,14 @@ public class Payment {
      * @param totalPaid
      * @param saleInfo
      * @return an array of 1- what my company win, 2- how much money to return to the customer
-     */ //TODO test the exception here
+     */
     public double[] pay(double totalPaid, SaleInformation saleInfo) throws OperationFailedException
     {
         if (saleInfo == null )
             throw new OperationFailedException("saleInfo is not initialized in Payment", new NullPointerException());
+        else if(totalPaid < 0)
+            throw new OperationFailedException("We are not a bank and can't give you money (pay in minus)", new NullPointerException());
+
 
         double totalWin = saleInfo.getPriceIncludingTax();
         double change =  amountOfChange(totalPaid, totalWin);

@@ -106,16 +106,10 @@ public class Controller {
     public double payForCurrentSale(double amountPaid) throws OperationFailedException
     {
 
-        try {
-            double[] payInfo = payment.pay(amountPaid, saleInfo); //0- what my company win, 1- # money to return to the customer
-            saleInfo.addPaymentObservers(paymentObservers);
-            cashRegistry.addNewAmount(payInfo[0]);
-            return payInfo[1];
-        }
-
-        catch (NullPointerException exc){
-        throw new OperationFailedException("saleInfo is not initialized in the class Payment", new NullPointerException());
-    }
+        double[] payInfo = payment.pay(amountPaid, saleInfo); //0- what my company win, 1- # money to return to the customer
+        saleInfo.addPaymentObservers(paymentObservers);
+        cashRegistry.addNewAmount(payInfo[0]);
+        return payInfo[1];
 
 
     }

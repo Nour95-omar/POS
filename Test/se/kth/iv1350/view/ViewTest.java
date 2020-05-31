@@ -22,8 +22,11 @@ public class ViewTest {
     private ItemDTO item;
 
 
-
-
+    public ViewTest()
+    {
+        contr = new Controller();
+        view = new View(contr);
+    }
 
     @Before
     public void setUp() throws Exception {
@@ -39,12 +42,12 @@ public class ViewTest {
     }
 
 
-    @Test
-    public void runFakeExecutionTest() throws InvalidItemIdentifierException, DatabaseFailureException{
+    @Test(expected = InvalidItemIdentifierException.class)
+    public void runFakeExecutionAndThrowExceptionTest()
+    {
         view.startTheSale();
-       ItemDTO firstItem=contr.enterNewItem(4568,0);
-       assertEquals(item,firstItem);
-
+        ItemDTO firstItem = contr.enterNewItem(4568,0);
+       //assertEquals(item,firstItem);
 
     }
 

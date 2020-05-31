@@ -46,13 +46,20 @@ public class PaymentTest
         assertEquals(info[1], 100, 0.001);
 
 
-        //Test 3
-        info = payment.pay(-100, saleInfo);
-        assertEquals(info[0], 75, 0.001);
-        assertEquals(info[1], -175, 0.001);
+    }
+
+    @Test(expected = OperationFailedException.class)
+    public void testPayThrowExceptionWhenMoneyInMinus() throws OperationFailedException
+    {
+        double[] info = payment.pay(-100, saleInfo);
+
+    }
 
 
-
+    @Test(expected = OperationFailedException.class)
+    public void testPayThrowExceptionWhenSaleInfoUnInit() throws OperationFailedException
+    {
+        double[] info = payment.pay(100, null);
 
     }
 }

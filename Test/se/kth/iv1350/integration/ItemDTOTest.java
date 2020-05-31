@@ -25,13 +25,13 @@ public class ItemDTOTest
 
     @Test
     public void getItemPriceTest() {
-        assertEquals(25, item.getItemIdentifier());
+        assertEquals(25, item.getItemPrice(), 0.0);
 
     }
 
     @Test
     public void getItemDescriptionTest() {
-        assertEquals("Book", item.getItemIdentifier());
+        assertEquals("Book", item.getItemDescription());
 
     }
 
