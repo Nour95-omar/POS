@@ -65,25 +65,27 @@ public class Controller {
      * @return This methods return the item description if the item found in items registry.
      * @throws InvalidItemIdentifierException if the searched item not found in the store.
      */
-    public ItemDTO enterNewItem(int itemId, int quantity) throws DatabaseFailureException, InvalidItemIdentifierException {
+    public ItemDTO enterNewItem(int itemId, int quantity) throws DatabaseFailureException, InvalidItemIdentifierException
+    {
 
-        try{
+        //try
+        //{
             ItemDTO scannedItem = itemRegistry.searchItem(itemId);
 
-
-        if (scannedItem != null)
-        {
-            saleInfo.addToBasket(scannedItem, quantity);
-            return scannedItem;
-        }
-        else
-        {
+            if (scannedItem != null)
+            {
+                saleInfo.addToBasket(scannedItem, quantity);
+                return scannedItem;
+            }
+            else
+            {
             return null;
-        }
-    }
-        catch (NullPointerException exc) {
-            throw new InvalidItemIdentifierException(itemId);
-        }
+            }
+        //}
+        //catch (InvalidItemIdentifierException exc)
+        //{
+        //    throw new InvalidItemIdentifierException(itemId);
+        //}
     }
 
 

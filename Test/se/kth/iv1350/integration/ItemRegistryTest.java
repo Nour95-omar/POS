@@ -3,7 +3,7 @@ import se.kth.iv1350.integration.ItemDTO;
 
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.*;
+//import static org.junit.jupiter.api.Assertions.*;
 
 
 import java.util.ArrayList;

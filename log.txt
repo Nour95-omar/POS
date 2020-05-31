@@ -1,0 +1,7 @@
+*******************************            Log            
+31 May 2020, 23:57:55, Exception was thrown: Unfortunately the product:7604676 does not exist in the store
+se.kth.iv1350.integration.InvalidItemIdentifierException: Unfortunately the product:7604676 does not exist in the store
+	at se.kth.iv1350.integration.ItemRegistry.searchItem(ItemRegistry.java:56)
+	at se.kth.iv1350.controller.Controller.enterNewItem(Controller.java:73)
+	at se.kth.iv1350.view.View.runFakeExecution(View.java:57)
+	at se.kth.iv1350.startUp.Main.main(Main.java:22)
