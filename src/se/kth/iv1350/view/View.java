@@ -50,11 +50,11 @@ public class View {
     public void runFakeExecution() //throws OperationFailedException, InvalidItemIdentifierException, DatabaseFailureException
     {
         startTheSale();
-        int newItem = 0;
+        int newItem = 7604676;
         try {
             System.out.println("The cashier enters new items.\n");
-            contr.enterNewItem(123456, 1); //This is correct
-            contr.enterNewItem(7604676, 1); //This will throw an exception
+            contr.enterNewItem(123456, 1);
+            contr.enterNewItem(7604676, 1);
 
         } catch (InvalidItemIdentifierException exc) {
             handleException("This product: " + newItem + " does not exist in the store", exc);

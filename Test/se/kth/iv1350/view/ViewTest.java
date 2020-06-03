@@ -47,7 +47,6 @@ public class ViewTest {
     {
         view.startTheSale();
         ItemDTO firstItem = contr.enterNewItem(4568,0);
-       //assertEquals(item,firstItem);
 
     }
 

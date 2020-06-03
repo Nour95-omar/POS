@@ -68,8 +68,6 @@ public class Controller {
     public ItemDTO enterNewItem(int itemId, int quantity) throws DatabaseFailureException, InvalidItemIdentifierException
     {
 
-        //try
-        //{
             ItemDTO scannedItem = itemRegistry.searchItem(itemId);
 
             if (scannedItem != null)
@@ -81,11 +79,7 @@ public class Controller {
             {
             return null;
             }
-        //}
-        //catch (InvalidItemIdentifierException exc)
-        //{
-        //    throw new InvalidItemIdentifierException(itemId);
-        //}
+
     }
 
 
@@ -120,6 +114,7 @@ public class Controller {
      * This method updates the accounting and inventory system after the sale finish.
      */
     public void updateSystemCreater() {
+
         systemCreator.updateAccountAndInventory(saleInfo);
     }
 

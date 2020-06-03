@@ -20,7 +20,7 @@ public class Main {
         Controller contr = new Controller();
         View view = new View(contr);
         view.runFakeExecution();
-        System.out.println("Unable to start the application");
+
    }
 
 

@@ -45,6 +45,20 @@ public class ItemRegistryTest {
 
        }
     }
+
+
+    @Test
+    public void searchItemTest() {
+        int newItem=135987;
+        ItemDTO checkedItem= itemRegistry.searchItem(newItem);
+        assertEquals(item.getItemIdentifier(),checkedItem.getItemIdentifier());
+    }
+
+    @Test
+    public void addItemsTest() {
+        assertNotNull("The arrayList items contains an item", items);
+
+    }
 /*
     @Test
     public void testEmptyItemRegistry() throws DatabaseFailureException{
@@ -64,16 +78,4 @@ public class ItemRegistryTest {
 
 
 
-    @Test
-    public void searchItemTest() {
-        int newItem=135987;
-        ItemDTO checkedItem= itemRegistry.searchItem(newItem);
-        assertEquals(item.getItemIdentifier(),checkedItem.getItemIdentifier());
-    }
-
-    @Test
-    public void addItemsTest() {
-        assertNotNull("The arrayList items contains an item", items);
-
-    }
 }
